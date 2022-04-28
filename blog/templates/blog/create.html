@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block main %}
+      <h1>블로그 글을 작성하는 페이지 입니다.</h1>
+      <form action="{% url "blog:create" %}" method="post" id ="blog-write" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" placeholder="제목을 입력해주세요" name="title"/>
+        <div>
+          <input type="file" name="image" form="blog-write"/>
+        </div>
+        <input type="submit"/>
+      </form>
+      <textarea placeholder="내용을 입력 해주세요" form="blog-write" name="content"></textarea>
+{% endblock %}

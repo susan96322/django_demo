@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}
+<title>상세 페이지</title>
+{% endblock %}
+{% block main %}
+    <h1>{{title}}</h1>
+    <h2>{{content}}</h2>
+    {% if image %}
+    <image src="{{image.url}}"/>
+    {% endif %}
+    <a href={% url "blog:update" id %}>수정하기</a>
+    <form action="{% url "blog:delete" id %}" method="post">  <!-- method를 따로 안적어주면 default: get-->
+        {% csrf_token %}
+        <input type="submit" value="삭제"/>
+    </form>
+{% endblock %}

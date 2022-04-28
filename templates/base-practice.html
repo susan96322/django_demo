@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>base</title>
+</head>
+<body>
+    {# 이게 template 주석입니다. #}
+    <h1>오늘의 날씨는 {{weather_data.weather}}이며, 온도는 섭씨 {{weather_data.temperature}}도 입니다.</h1>
+    {% for member in members %}
+    <p>{{member}}</p>
+    {% empty %}     <!-- member가 하나도 없으면 멋사 핑크 해체됨 문장이 실행됨(for문안에서 사용가능한 기능?)-->
+    <p>멋사 핑크 해체됨</p>
+    {% endfor %}
+    <p>멋사핑크 총 멤버수는 {{members|length}}</p>
+    {% comment "주석이닷" %}
+    dkfjkslfjskldfja'
+    sdlkfjlsdkjflk
+    {% endcomment %}
+</body>
+</html>
